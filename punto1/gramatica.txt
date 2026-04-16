@@ -1,0 +1,29 @@
+<programa>      ::= <instruccion> { <instruccion> }
+
+<instruccion>   ::= <operacion> ( ";" | "\n" )
+
+<operacion>     ::= <create_op> 
+                  | <read_op> 
+                  | <update_op> 
+                  | <delete_op>
+
+<create_op>     ::= "create" "(" <id> "," <diccionario> ")"
+<read_op>       ::= "read" "(" <id> "," <diccionario> ")"
+<update_op>     ::= "update" "(" <id> "," <diccionario> "," <diccionario> ")"
+<delete_op>     ::= "delete" "(" <id> "," <diccionario> ")"
+
+<diccionario>   ::= "{" [ <pares> ] "}"
+
+<pares>         ::= <par> { "," <par> }
+
+<par>           ::= <string> ":" <valor>
+
+<valor>         ::= <string> 
+                  | <numero> 
+                  | <booleano> 
+                  | <diccionario>
+
+<id>            ::= [a-zA-Z_][a-zA-Z0-9_]*
+<string>        ::= "\"" { <caracter> } "\""
+<numero>        ::= [ "-" ] <digito> { <digito> } [ "." <digito> { <digito> } ]
+<booleano>      ::= "true" | "false"
