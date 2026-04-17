@@ -1,10 +1,4 @@
-# ll1_parser.py
-# Gramática LL(1) para el mismo lenguaje:
-#   E  -> T E'
-#   E' -> + T E' | - T E' | ε
-#   T  -> F T'
-#   T' -> * F T' | / F T' | ε
-#   F  -> ( E ) | num
+
 
 TERMINALS = {'num', '+', '-', '*', '/', '(', ')'}
 LL1_TABLE = {
